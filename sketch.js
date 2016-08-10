@@ -4,8 +4,7 @@ var myBlue=3;
 
 function circle(x,y,diameter) {
   arc(x,y,diameter,diameter,0,TWO_PI);
-  
-}
+  }
 
 function setup() {
   createCanvas(1000,1000);
@@ -13,25 +12,23 @@ function setup() {
 }
 
 function draw() {
-  myRed=myRed+.8;
-  if (myRed==255){
-    myRed= myRed-10;
-  }
-  myGreen=myGreen+.5;
-  if (myGreen==255){
-    myGreen= myGreen-14;
-  }
-  myBlue=myBlue+.8;
-  if (myBlue==255){
-    myBlue= myBlue-16;
-  }
   noStroke();
   fill(myRed,myGreen,myBlue);
-  circle(mouseX,mouseY,15);
+  myRed=random(255);
+  myGreen=250;
+  myBlue=250;
+  circle(mouseX,mouseY,20);
   
-}
+  if (mouseIsPressed){
+    noStroke();
+    fill(255,255,255);
+    circle(mouseX,mouseY,20);
+  }
+  
+ for (var ii=0; ii<=1000; ii+=45){
+   fill(0);
+   circle(ii,200,25); 
+  }
 
-function mousePressed(){
- background(147,189,250);
   
 }
